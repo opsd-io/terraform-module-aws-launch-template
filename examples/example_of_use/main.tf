@@ -20,5 +20,4 @@ module "launch_template_amd64" {
   key_name                           = "mykey"
   iam_instance_profile               = "myprofile"
   tags                               = local.tags
-  launch_template_tag_specifications = local.tags
 }

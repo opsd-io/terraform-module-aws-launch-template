@@ -40,7 +40,7 @@ resource "aws_launch_template" "main" {
     for_each = toset(["instance", "volume", "network-interface"])
     content {
       resource_type = tag_specifications.key
-      tags          = var.launch_template_tag_specifications
+      tags          = var.tags
     }
   }
 

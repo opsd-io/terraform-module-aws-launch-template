@@ -92,14 +92,8 @@ variable "user_data" {
   default     = null
 }
 
-variable "launch_template_tag_specifications" {
-  description = "Tags being added to EC2, volume and network interface."
-  type        = map(string)
-  default     = {}
-}
-
 variable "tags" {
-  description = "A map of tags to assign to the launch template."
+  description = "The Tags to to apply to the launch template, EC2, volume, network interface."
   type        = map(string)
   default     = {}
 }
