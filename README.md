@@ -6,18 +6,22 @@ Meet **OPSd**. The unique and effortless way of managing cloud infrastructure.
 
 ## Introduction
 
-What does the module provide?
+Terraform module which creates a launch template that contains the configuration information to launch an instance.
 
 ## Usage
 
 ```hcl
-module "module_name" {
-  source  = "github.com/opsd-io/module_name?ref=v0.0.1"
+module "launch_template_amd64" {
+  source = "../modules/terraform-module-aws-launch-template"
 
-  # Variables
-  variable_1 = "foo"
-  variable_2 = "bar"
+  name                               = "foo-amd64"
+  image_id                           = "ami-0a0956a3bacfbf233"
+  vpc_security_group_ids             = ["sg-09d49e22dafd43e23", "sg-0ea844093e906d7fg"]
+  user_data                          = "IyEvYmluL2Jhc2gKI0ZvciB1c2Ugd2l0aCB0aGUgQVNHIHVzZXIgZGF0YSBzZWN0aW9uIG9mIExhdW5jaCBDb25maWdzIHB1c2ggbXExClNUQVJUVElNRT0k"
+  key_name                           = "mykey"
+  iam_instance_profile               = "myprofile"
 }
+
 ```
 
 **IMPORTANT**: Make sure not to pin to master because there may be breaking changes between releases.
