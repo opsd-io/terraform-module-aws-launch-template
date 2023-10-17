@@ -1,9 +1,3 @@
-module "module_name" {
-  source = "../../"
-
-}
-
-
 locals {
   name = "foo"
   tags = { Name = "foo", Env = "prd" }
